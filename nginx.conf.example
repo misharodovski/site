@@ -1,0 +1,29 @@
+# Пример конфигурации nginx + php-fpm для VPS
+server {
+    listen 80;
+    server_name istaya-kuznica.ru www.istaya-kuznica.ru;
+    root /var/www/istaya-kuznica;
+    index index.html;
+    charset utf-8;
+
+    error_page 404 /404.html;
+
+    location / { try_files $uri $uri/ =404; }
+
+    location = /send.php {
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_pass unix:/run/php/php8.2-fpm.sock;   # проверьте версию PHP
+    }
+    location ~ \.php$ { return 404; }
+    location ^~ /data/ { deny all; }
+    location ~ /(README\.md|CLAUDE\.md|nginx\.conf\.example)$ { deny all; }
+    location ^~ /tools/ { deny all; }
+    location ~ /\. { deny all; }
+
+    location ~* \.(jpg|jpeg|png|webp|svg|ico|woff2|mp4|webm)$ { expires 1y; access_log off; }
+    location ~* \.(css|js)$ { expires 7d; }
+
+    gzip on;
+    gzip_types text/css application/javascript application/json image/svg+xml;
+}

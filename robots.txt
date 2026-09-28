@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /data/
+Disallow: /send.php
+
+Sitemap: https://istaya-kuznica.ru/sitemap.xml
