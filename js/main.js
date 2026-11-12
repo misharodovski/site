@@ -30,9 +30,27 @@
     if (C.telegram) list.push({ k: 'tg', name: 'Telegram', href: 'https://t.me/' + C.telegram.replace(/^@/, '') });
     if (C.whatsapp) list.push({ k: 'wa', name: 'WhatsApp', href: 'https://wa.me/' + C.whatsapp.replace(/\D/g, '') + (t ? '?text=' + t : '') });
     if (C.max) list.push({ k: 'max', name: 'MAX', href: C.max });
+    else if (C.maxPhone) list.push({ k: 'max', name: 'MAX', copy: C.maxPhone });
     if (C.vk) list.push({ k: 'vk', name: 'ВКонтакте', href: C.vk });
     return list;
   }
+  function fmtPhone(p) { return p === C.phone && C.phoneDisplay ? C.phoneDisplay : p; }
+  function msgHTML(m) {
+    if (m.copy) return '<button type="button" class="msg msg--' + m.k + '" data-copy="' + m.copy + '" title="Скопировать номер для поиска в ' + m.name + '">' + ICONS[m.k] + m.name + ' · ' + fmtPhone(m.copy) + '</button>';
+    return '<a class="msg msg--' + m.k + '" href="' + m.href + '" target="_blank" rel="noopener">' + ICONS[m.k] + m.name + '</a>';
+  }
+  /* кнопка MAX без ссылки: копирует номер, чтобы найти нас в приложении */
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-copy]');
+    if (!b) return;
+    var num = b.getAttribute('data-copy'), old = b.innerHTML;
+    var done = function () {
+      b.innerHTML = (b.classList.contains('msg') ? ICONS.max : '') + 'Номер скопирован — найдите нас в MAX';
+      setTimeout(function () { b.innerHTML = old; }, 2600);
+    };
+    try { navigator.clipboard.writeText(num).then(done, done); } catch (err) { done(); }
+    goal('click_messenger');
+  });
 
   function applyContacts() {
     $$('[data-c="phone"]').forEach(function (a) {
@@ -48,9 +66,12 @@
     $$('[data-c="city"]').forEach(function (e) { if (C.city) e.textContent = C.city; });
     $$('[data-c="hours"]').forEach(function (e) { if (C.hours) e.textContent = C.hours; });
 
-    var html = messengerLinks().map(function (m) {
-      return '<a class="msg msg--' + m.k + '" href="' + m.href + '" target="_blank" rel="noopener">' + ICONS[m.k] + m.name + '</a>';
-    }).join('');
+    var html = messengerLinks().map(msgHTML).join('');
+    $$('[data-c="max"]').forEach(function (e) {
+      var row = e.closest('[data-c-row]');
+      if (!C.max && !C.maxPhone) { if (row) row.hidden = true; return; }
+      e.innerHTML = C.max ? '<a href="' + C.max + '" target="_blank" rel="noopener">Написать в MAX</a>' : fmtPhone(C.maxPhone);
+    });
     $$('[data-messengers]').forEach(function (box) { box.innerHTML = html; });
 
     var y = $('#year'); if (y) y.textContent = new Date().getFullYear();
@@ -426,10 +447,11 @@
       var text = leadText();
       $('#sendViaText').textContent = text;
       try { navigator.clipboard && navigator.clipboard.writeText(text); } catch (e) {}
-      var links = messengerLinks(text).filter(function (m) { return m.k === 'tg' || m.k === 'wa' || m.k === 'max'; });
+      var links = messengerLinks(text).filter(function (m) { return (m.k === 'tg' || m.k === 'wa' || m.k === 'max') && m.href; });
       var html = links.map(function (m) { return '<a class="btn btn--ghost" href="' + m.href + '" target="_blank" rel="noopener">' + m.name + '</a>'; }).join('');
       if (C.phone) html += '<a class="btn btn--fire" href="tel:' + C.phone + '">Позвонить ' + (C.phoneDisplay || C.phone) + '</a>';
       if (C.email) html += '<a class="btn btn--ghost" href="mailto:' + C.email + '?subject=' + encodeURIComponent('Заявка с сайта') + '&body=' + encodeURIComponent(text) + '">Отправить на почту</a>';
+      if (!C.max && C.maxPhone) html += '<p class="send-via__hint">Удобнее в MAX? Найдите там номер <b>' + fmtPhone(C.maxPhone) + '</b> и вставьте скопированный текст заявки.</p>';
       $('#sendViaBtns').innerHTML = html;
       dlg.hidden = false;
       $('.dialog__close', dlg).focus();

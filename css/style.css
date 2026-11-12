@@ -326,6 +326,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .dialog__box p { color: var(--muted); }
 .send-via__btns { display: grid; gap: 10px; margin: 18px 0; }
 .send-via__btns .btn { width: 100%; }
+.send-via__hint { margin: 4px 0 0; font-size: 14px; }
+.send-via__hint b { color: var(--text); }
+button.msg { background: none; cursor: pointer; font: inherit; font-size: 14px; font-weight: 600; color: inherit; }
+.messengers--big button.msg { font-size: 15px; }
 .send-via__text { white-space: pre-wrap; font: 13px/1.5 var(--sans); color: var(--muted); background: rgba(0, 0, 0, .25); border: 1px solid var(--line); border-radius: 10px; padding: 14px; margin: 0; max-height: 160px; overflow: auto; }
 
 /* ---------- появление при прокрутке ---------- */

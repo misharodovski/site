@@ -2,6 +2,7 @@ User-agent: *
 Disallow: /data/
 Disallow: /send.php
 Disallow: /send-config.php
+Disallow: /max-setup.php
 Allow: /
 
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://istaya-kuznica.ru/sitemap.xml

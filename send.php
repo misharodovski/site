@@ -94,6 +94,46 @@ function http_post($url, $fields, $timeout = 8) {
     return [$code, $out];
 }
 
+/* ---------- HTTP POST с JSON и заголовками (для MAX) ---------- */
+function http_post_json($url, $data, $headers, $timeout = 8) {
+    $body = json_encode($data, JSON_UNESCAPED_UNICODE);
+    $headers[] = 'Content-Type: application/json';
+    if (function_exists('curl_init')) {
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [
+            CURLOPT_POST => true, CURLOPT_POSTFIELDS => $body, CURLOPT_HTTPHEADER => $headers,
+            CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => $timeout, CURLOPT_CONNECTTIMEOUT => $timeout,
+        ]);
+        $out = curl_exec($ch);
+        $code = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        $err = curl_error($ch);
+        curl_close($ch);
+        return [$code, $out === false ? $err : $out];
+    }
+    $ctx = stream_context_create(['http' => [
+        'method' => 'POST', 'timeout' => $timeout, 'ignore_errors' => true,
+        'header' => implode("\r\n", $headers) . "\r\n", 'content' => $body,
+    ]]);
+    $out = @file_get_contents($url, false, $ctx);
+    $code = 0;
+    if (isset($http_response_header[0]) && preg_match('/\s(\d{3})\s/', $http_response_header[0], $m)) $code = (int)$m[1];
+    return [$code, $out];
+}
+
+/* отправка сообщения ботом MAX (dev.max.ru: POST /messages, токен в заголовке Authorization) */
+function max_send($c, $param, $id, $text) {
+    $hosts = [rtrim($c['api'], '/')];
+    if (strpos($c['api'], 'platform-api.max.ru') !== false) $hosts[] = 'https://platform-api2.max.ru'; // запасной адрес
+    $last = [0, ''];
+    foreach ($hosts as $h) {
+        $last = http_post_json($h . '/messages?' . $param . '=' . rawurlencode(trim($id)) . '&disable_link_preview=true',
+            ['text' => $text], ['Authorization: ' . $c['token']]);
+        if ($last[0] >= 200 && $last[0] < 300) return $last;
+        if ($last[0] >= 400) break; // ошибка в токене/ID — второй адрес не поможет
+    }
+    return $last;
+}
+
 /* ---------- минимальный SMTP-клиент (SSL/TLS + AUTH LOGIN) ---------- */
 function smtp_send($c, $subject, $body, &$err) {
     $host = $c['host']; $port = (int)$c['port']; $secure = $c['secure'];
@@ -159,6 +199,19 @@ if (!empty($tg['enabled']) && $tg['token'] !== '' && $tg['chat_id'] !== '') {
             'chat_id' => trim($chat), 'text' => $text, 'disable_web_page_preview' => 'true',
         ]);
         if ($code === 200) $delivered[] = 'tg'; else $errors[] = "tg:$code";
+    }
+}
+
+/* ---------- MAX ---------- */
+$mx = $CFG['max'] ?? [];
+if (!empty($mx['enabled']) && ($mx['token'] ?? '') !== '') {
+    $targets = [];
+    foreach (array_filter(explode(',', (string)($mx['user_id'] ?? ''))) as $u) $targets[] = ['user_id', $u];
+    foreach (array_filter(explode(',', (string)($mx['chat_id'] ?? ''))) as $c) $targets[] = ['chat_id', $c];
+    foreach ($targets as $t) {
+        list($code, $out) = max_send($mx, $t[0], $t[1], $text);
+        if ($code >= 200 && $code < 300) $delivered[] = 'max';
+        else $errors[] = "max:$code " . substr((string)$out, 0, 120);
     }
 }
 
