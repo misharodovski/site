@@ -5,24 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Страница не найдена — Истая Кузница</title>
   <meta name="robots" content="noindex">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
+  <!-- Страница самодостаточная (без внешних файлов): работает и в корне домена, и в подпапке (GitHub Pages /site/) -->
   <style>
-    .nf { min-height: 100vh; display: grid; place-items: center; text-align: center; padding: 40px 20px; }
-    .nf img { width: 120px; margin: 0 auto 30px; animation: plGlow 2.4s ease-in-out infinite alternate; }
-    .nf h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(80px, 14vw, 160px); line-height: 1; margin: 0; color: var(--copper-2); }
-    .nf p { color: var(--muted); margin: 10px 0 36px; text-transform: uppercase; letter-spacing: .2em; font-size: 12px; }
+    :root { --bg: #0e0c0b; --text: #efe8df; --muted: #a89e93; --fire: #e07a2f; --fire-2: #ffb25b; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; text-align: center; padding: 40px 16px;
+      background: radial-gradient(60% 50% at 50% 100%, rgba(224,122,47,.25), transparent 70%), var(--bg);
+      color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+    b { display: block; font: 700 clamp(110px, 22vw, 220px)/.9 Georgia, "Times New Roman", serif;
+      background: linear-gradient(180deg, var(--fire-2), #b4521a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    h1 { font: 600 clamp(28px, 4vw, 40px)/1.1 Georgia, "Times New Roman", serif; margin: 12px 0 14px; }
+    p { color: var(--muted); margin: 0 0 28px; }
+    a { display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; border-radius: 999px; text-decoration: none; font-weight: 600;
+      color: #1a0d04; background: linear-gradient(135deg, var(--fire-2), var(--fire) 55%, #b4521a); }
   </style>
 </head>
 <body>
-  <main class="nf">
-    <div>
-      <img src="/img/logo-emblem.png" alt="">
-      <h1>404</h1>
-      <p>Эта страница ещё не выкована</p>
-      <a class="btn btn--outline" href="/">На главную <i class="arrow"></i></a>
-    </div>
+  <main>
+    <b>404</b>
+    <h1>Эта страница остыла</h1>
+    <p>Похоже, ссылка устарела или в адресе опечатка.</p>
+    <a id="home" href="/">На главную</a>
   </main>
+  <script>
+    // на GitHub Pages сайт лежит в подпапке /site/
+    if (/\.github\.io$/.test(location.hostname)) {
+      var seg = location.pathname.split('/')[1];
+      if (seg) document.getElementById('home').href = '/' + seg + '/';
+    }
+  </script>
 </body>
 </html>

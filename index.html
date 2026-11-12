@@ -3,45 +3,36 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Истая Кузница — архитектурная художественная ковка</title>
-  <meta name="description" content="Истая Кузница — частная мастерская архитектурной художественной ковки. Ворота, ограждения, лестницы, перила, балконы и интерьерная ковка ручной работы по индивидуальным проектам.">
-  <meta name="theme-color" content="#0b0a09">
-  <link rel="canonical" href="https://istaya-kuznica.ru/">
+  <title>Художественная ковка в Донецке — Истая Кузница | ворота, заборы, перила, навесы</title>
+  <meta name="description" content="Кузница в Донецке: кованые ворота, заборы, перила, лестницы, балконы, навесы, решётки и декор под заказ. Ручная работа, индивидуальные эскизы. Работаем по всей ДНР.">
+  <meta name="keywords" content="ковка Донецк, кузница Донецк, кованые ворота Донецк, кованые заборы ДНР, художественная ковка ДНР, кованые перила, навесы, решётки на окна">
+  <meta name="theme-color" content="#0e0c0b">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://example.com/">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
-  <meta property="og:title" content="Истая Кузница — искусство, выкованное на века">
-  <meta property="og:description" content="Архитектурная художественная ковка для домов, в которых живут поколения.">
-  <meta property="og:image" content="img/og.jpg">
+  <meta property="og:site_name" content="Истая Кузница">
+  <meta property="og:title" content="Истая Кузница — художественная ковка в Донецке">
+  <meta property="og:description" content="Ворота, заборы, перила, навесы и кованый декор под заказ. Ручная работа. Донецк и вся ДНР.">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:image" content="https://example.com/img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@300;400;500;600&display=swap&subset=cyrillic" rel="stylesheet">
-
+  <script>document.documentElement.className += ' js';</script>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/manrope-cyr.woff2" crossorigin>
   <link rel="preload" as="image" href="img/hero.jpg">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/iron.css">
+  <link rel="stylesheet" href="css/fonts.css?v=2">
+  <link rel="stylesheet" href="css/style.css?v=2">
 </head>
-<body class="is-loading">
+<body>
 
-<!-- ============ ПРЕЛОАДЕР ============ -->
-<div class="preloader" id="preloader" aria-hidden="true">
-  <div class="preloader__inner">
-    <img class="preloader__logo" src="img/logo-emblem.png" alt="" width="277" height="360">
-    <div class="preloader__name"><span>Истая</span> <span>Кузница</span></div>
-    <div class="preloader__bar"><i></i></div>
-  </div>
-</div>
-
-<!-- Кастомный курсор (только для мыши) -->
-<div class="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"></div></div>
-
-<!-- «Живое железо»: кованые побеги по краям страницы, растут и изгибаются при прокрутке (js/iron.js) -->
-<div class="iron-rails" aria-hidden="true"></div>
+<a class="skip" href="#main">Перейти к содержанию</a>
 
 <!-- ============ ШАПКА ============ -->
 <header class="header" id="header">
@@ -52,384 +43,285 @@
     </a>
 
     <nav class="nav" aria-label="Основная навигация">
-      <a href="#about" class="nav__link">О нас</a>
-      <a href="#projects" class="nav__link">Направления</a>
-      <a href="#works" class="nav__link">Работы</a>
-      <a href="#process" class="nav__link">Процесс</a>
-      <a href="#philosophy" class="nav__link">Философия</a>
-      <a href="#contacts" class="nav__link">Контакты</a>
+      <a href="#services">Услуги</a>
+      <a href="#works">Работы</a>
+      <a href="#process">Как работаем</a>
+      <a href="#area">География</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#contacts">Контакты</a>
     </nav>
 
-    <a href="#contacts" class="btn btn--outline btn--sm header__cta">Обсудить проект</a>
-
-    <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="header__right">
+      <a class="header__phone" data-c="phone" href="tel:+79490000000">+7 (949) 000-00-00</a>
+      <a href="#contacts" class="btn btn--fire btn--sm header__cta">Заказать расчёт</a>
+      <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
-<!-- Мобильное меню -->
-<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+<div class="mobile-menu" id="mobileMenu" hidden>
   <nav class="mobile-menu__nav" aria-label="Мобильная навигация">
-    <a href="#about">О нас</a>
-    <a href="#projects">Направления</a>
+    <a href="#services">Услуги</a>
     <a href="#works">Работы</a>
-    <a href="#process">Процесс</a>
-    <a href="#philosophy">Философия</a>
+    <a href="#process">Как работаем</a>
+    <a href="#area">География</a>
+    <a href="#faq">Вопросы</a>
     <a href="#contacts">Контакты</a>
   </nav>
   <div class="mobile-menu__foot">
-    <a href="tel:+79991234567" class="mobile-menu__phone">+7 (999) 123-45-67</a>
-    <a href="#contacts" class="btn btn--outline">Обсудить проект</a>
+    <a class="mobile-menu__phone" data-c="phone" href="tel:+79490000000">+7 (949) 000-00-00</a>
+    <div class="messengers" data-messengers></div>
+    <a href="#contacts" class="btn btn--fire">Заказать расчёт</a>
   </div>
 </div>
 
+<main id="main">
 
-<main>
-
-  <!-- ============ 01. ГЕРОЙ ============ -->
-  <section class="hero" id="top" data-section>
-    <div class="hero__media" id="heroMedia">
-      <img src="img/hero.jpg" alt="Кузнец куёт раскалённую заготовку на наковальне" class="hero__img" id="heroImg" width="1460" height="794">
-      <div class="hero__glow hero__glow--metal" id="glowMetal"></div>
-      <div class="hero__glow hero__glow--fire" id="glowFire"></div>
+  <!-- ============ ГЕРОЙ ============ -->
+  <section class="hero" id="top">
+    <div class="hero__media">
+      <img src="img/hero.jpg" alt="Кованые ворота работы мастерской «Истая Кузница»" class="hero__img" width="1600" height="1200" fetchpriority="high">
     </div>
     <canvas class="hero__sparks" id="sparks" aria-hidden="true"></canvas>
     <div class="hero__shade"></div>
 
     <div class="container hero__content">
-      <p class="eyebrow hero__eyebrow" data-hero-anim>Искусство, выкованное на века</p>
-      <h1 class="hero__title">
-        <span class="line"><span>Некоторые вещи</span></span>
-        <span class="line"><span>рождаются</span></span>
-        <span class="line"><span>не на заводе.</span></span>
-        <span class="line line--fire"><span>Они рождаются</span></span>
-        <span class="line line--fire"><span>в огне.</span></span>
-      </h1>
-      <p class="hero__text" data-hero-anim>Мы создаём архитектурную художественную ковку, которая становится частью дома, сохраняет свою красоту десятилетиями и&nbsp;передаётся следующим поколениям.</p>
-      <div class="hero__actions" data-hero-anim>
-        <a href="#projects" class="btn btn--outline">Смотреть проекты <i class="arrow"></i></a>
-        <button type="button" class="btn-video" id="videoBtn">
-          Посмотреть видео
-          <span class="btn-video__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7l8 5-8 5z"/></svg></span>
-        </button>
+      <p class="eyebrow"><span class="pin" aria-hidden="true"></span>Донецк · работаем по всей ДНР</p>
+      <h1 class="hero__title">Художественная ковка <span class="fire">под ваш дом</span></h1>
+      <p class="hero__text">Ворота, заборы, перила, навесы, решётки и кованый декор. Делаем по индивидуальному эскизу, куём вручную, сами привозим и монтируем.</p>
+      <div class="hero__actions">
+        <a href="#contacts" class="btn btn--fire">Рассчитать стоимость <i class="arrow"></i></a>
+        <a href="#works" class="btn btn--ghost">Смотреть работы</a>
       </div>
-    </div>
-
-    <a href="#about" class="scroll-hint" aria-label="Прокрутить вниз"><span></span></a>
-  </section>
-
-  <!-- ============ БЕГУЩАЯ СТРОКА НАПРАВЛЕНИЙ ============ -->
-  <div class="marquee" aria-label="Направления работы">
-    <div class="marquee__track">
-      <span>Ворота</span><i>✦</i><span>Калитки</span><i>✦</i><span>Ограждения</span><i>✦</i><span>Лестницы и перила</span><i>✦</i><span>Балконы</span><i>✦</i><span>Навесы</span><i>✦</i><span>Каминные ансамбли</span><i>✦</i><span>Светильники и люстры</span><i>✦</i><span>Интерьерная ковка</span><i>✦</i>
-    </div>
-  </div>
-
-  <!-- ============ 02. О НАС ============ -->
-  <section class="about section" id="about" data-section>
-    <div class="container about__grid">
-      <div class="about__left">
-        <p class="eyebrow" data-reveal>О мастерской</p>
-        <h2 class="h2" data-reveal>Не всё, что сделано из&nbsp;металла, становится <em>искусством</em></h2>
-        <div class="spark-cross" data-reveal aria-hidden="true"></div>
-      </div>
-      <div class="about__right">
-        <p data-reveal>Истая Кузница — это частная мастерская художественной ковки, где традиции кузнечного ремесла встречаются с&nbsp;архитектурной эстетикой и&nbsp;современными технологиями. Каждое изделие создаётся вручную, с&nbsp;уважением к&nbsp;материалу и&nbsp;архитектуре дома.</p>
-        <p class="accent-caps" data-reveal>Мы создаём не изделия.<br>Мы создаём наследие.</p>
-      </div>
-    </div>
-
-    <div class="container stats">
-      <div class="stat" data-reveal>
-        <div class="stat__num"><span data-count="100">0</span>%</div>
-        <div class="stat__label">Индивидуальные<br>проекты</div>
-      </div>
-      <div class="stat" data-reveal>
-        <div class="stat__num"><span data-count="0">0</span></div>
-        <div class="stat__label">Типовых<br>решений</div>
-      </div>
-      <div class="stat" data-reveal>
-        <div class="stat__num stat__num--inf">
-          <svg viewBox="0 0 100 50" aria-label="бесконечность"><path class="inf-path" d="M50 25 C 38 8, 12 8, 12 25 C 12 42, 38 42, 50 25 C 62 8, 88 8, 88 25 C 88 42, 62 42, 50 25 Z"/></svg>
-        </div>
-        <div class="stat__label">Срок службы<br>идеи</div>
-      </div>
-      <div class="stat" data-reveal>
-        <div class="stat__num"><span data-count="1">0</span></div>
-        <div class="stat__label">Мастерская<br>полного цикла</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ АРХИТЕКТУРА ============ -->
-  <section class="split">
-    <div class="split__media" data-reveal="clip">
-      <img src="img/gate.jpg" alt="Кованые ворота загородной резиденции с вечерней подсветкой" loading="lazy" data-parallax="0.12" width="1400" height="470">
-    </div>
-    <div class="split__body">
-      <p class="eyebrow eyebrow--plain" data-reveal>Архитектура. Характер. Наследие.</p>
-      <h2 class="h2" data-reveal>Металл становится частью архитектуры.</h2>
-      <p data-reveal>Мы проектируем и создаём изделия так, чтобы они выглядели естественным продолжением дома. Не&nbsp;украшением. Не&nbsp;дополнением. А&nbsp;частью архитектурного замысла.</p>
-      <a href="#process" class="link-arrow" data-reveal>Подробнее <i class="arrow"></i></a>
-    </div>
-  </section>
-
-  <div class="iron-divider" aria-hidden="true"></div>
-
-  <!-- ============ ФИЛОСОФИЯ ============ -->
-  <section class="philosophy" id="philosophy">
-    <div class="philosophy__bg">
-      <img src="img/swirl.jpg" alt="" loading="lazy" data-parallax="0.18" width="1210" height="362">
-    </div>
-    <div class="container philosophy__grid">
-      <div>
-        <p class="eyebrow" data-reveal>Философия</p>
-        <h2 class="h2 h2--xl" data-reveal>Мы работаем<br>со временем.</h2>
-      </div>
-      <div class="philosophy__text">
-        <p data-reveal>Через двадцать лет краска может стать благородной патиной.</p>
-        <p data-reveal>Через пятьдесят лет дети будут открывать те&nbsp;же ворота.</p>
-        <p data-reveal>Через сто лет останется только одно. <span class="copper">Качество.</span></p>
-        <a href="#about" class="link-arrow" data-reveal>О нас <i class="arrow"></i></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ 03. НАПРАВЛЕНИЯ ============ -->
-  <section class="projects section" id="projects" data-section>
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow" data-reveal>Направления</p>
-        <p class="section-head__sub" data-reveal>Более 380 выполненных работ</p>
-      </div>
-      <h2 class="h2 projects__title" data-reveal>Каждая работа — <em>своя история</em></h2>
-
-      <div class="projects__grid">
-        <a href="#works" class="card" data-reveal data-cat="ograzhdeniya" aria-label="Смотреть работы: Ограждения и ворота">
-          <div class="card__img"><img src="img/works/ograzhdeniya/48-t.jpg" alt="Ограждения и ворота — работа мастерской" loading="lazy" width="480" height="640"><span class="card__count" data-count-cat="ograzhdeniya"></span></div>
-          <div class="card__body">
-            <div><h3 class="card__title">Ограждения и ворота</h3><p class="card__tags">Заборы · ворота · калитки</p></div>
-            <i class="arrow"></i>
-          </div>
-        </a>
-        <a href="#works" class="card" data-reveal data-cat="lestnitsy" aria-label="Смотреть работы: Лестницы и перила">
-          <div class="card__img"><img src="img/works/lestnitsy/19-t.jpg" alt="Лестницы и перила — работа мастерской" loading="lazy" width="480" height="640"><span class="card__count" data-count-cat="lestnitsy"></span></div>
-          <div class="card__body">
-            <div><h3 class="card__title">Лестницы и перила</h3><p class="card__tags">Парадные · винтовые · уличные</p></div>
-            <i class="arrow"></i>
-          </div>
-        </a>
-        <a href="#works" class="card" data-reveal data-cat="balkony" aria-label="Смотреть работы: Балконы">
-          <div class="card__img"><img src="img/works/balkony/10-t.jpg" alt="Балконы — работа мастерской" loading="lazy" width="480" height="640"><span class="card__count" data-count-cat="balkony"></span></div>
-          <div class="card__body">
-            <div><h3 class="card__title">Балконы</h3><p class="card__tags">Французские · выпуклые · террасы</p></div>
-            <i class="arrow"></i>
-          </div>
-        </a>
-        <a href="#works" class="card" data-reveal data-cat="navesy" aria-label="Смотреть работы: Навесы и беседки">
-          <div class="card__img"><img src="img/works/navesy/29-t.jpg" alt="Навесы и беседки — работа мастерской" loading="lazy" width="480" height="640"><span class="card__count" data-count-cat="navesy"></span></div>
-          <div class="card__body">
-            <div><h3 class="card__title">Навесы и беседки</h3><p class="card__tags">Козырьки · навесы · перголы</p></div>
-            <i class="arrow"></i>
-          </div>
-        </a>
-        <a href="#works" class="card" data-reveal data-cat="reshetki" aria-label="Смотреть работы: Решётки на окна">
-          <div class="card__img"><img src="img/works/reshetki/12-t.jpg" alt="Решётки на окна — работа мастерской" loading="lazy" width="480" height="640"><span class="card__count" data-count-cat="reshetki"></span></div>
-          <div class="card__body">
-            <div><h3 class="card__title">Решётки на окна</h3><p class="card__tags">Окна · кондиционеры</p></div>
-            <i class="arrow"></i>
-          </div>
-        </a>
-        <a href="#works" class="card" data-reveal data-cat="kaminy" aria-label="Смотреть работы: Каминные ансамбли">
-          <div class="card__img"><img src="img/works/kaminy/04-t.jpg" alt="Каминные ансамбли — работа мастерской" loading="lazy" width="480" height="640"><span class="card__count" data-count-cat="kaminy"></span></div>
-          <div class="card__body">
-            <div><h3 class="card__title">Каминные ансамбли</h3><p class="card__tags">Экраны · дровницы · наборы</p></div>
-            <i class="arrow"></i>
-          </div>
-        </a>
-        <a href="#works" class="card" data-reveal data-cat="mebel" aria-label="Смотреть работы: Мебель и декор">
-          <div class="card__img"><img src="img/works/mebel/33-t.jpg" alt="Мебель и декор — работа мастерской" loading="lazy" width="480" height="640"><span class="card__count" data-count-cat="mebel"></span></div>
-          <div class="card__body">
-            <div><h3 class="card__title">Мебель и декор</h3><p class="card__tags">Столы · стулья · интерьер</p></div>
-            <i class="arrow"></i>
-          </div>
-        </a>
-        <a href="#works" class="card" data-reveal data-cat="fonari" aria-label="Смотреть работы: Свет">
-          <div class="card__img"><img src="img/works/fonari/02-t.jpg" alt="Свет — работа мастерской" loading="lazy" width="480" height="640"><span class="card__count" data-count-cat="fonari"></span></div>
-          <div class="card__body">
-            <div><h3 class="card__title">Свет</h3><p class="card__tags">Люстры · фонари · бра</p></div>
-            <i class="arrow"></i>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <div class="iron-divider" aria-hidden="true"></div>
-
-  <!-- ============ ГАЛЕРЕЯ РАБОТ ============ -->
-  <section class="works section" id="works" data-section>
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow" data-reveal>Наши работы</p>
-        <p class="section-head__sub" data-reveal>Реальные объекты мастерской</p>
-      </div>
-      <div class="works__filters" id="worksFilters" role="tablist" aria-label="Категории работ" data-reveal></div>
-      <div class="works__grid" id="worksGrid" aria-live="polite"></div>
-      <div class="works__more">
-        <button type="button" class="btn btn--outline" id="worksMore" hidden>Показать ещё <i class="arrow"></i></button>
-      </div>
-      <noscript><p class="works__noscript">Чтобы посмотреть галерею, включите JavaScript.</p></noscript>
-    </div>
-  </section>
-
-  <!-- ============ 04. ПРОЦЕСС ============ -->
-  <section class="process section" id="process" data-section>
-    <div class="container">
-      <div class="section-head section-head--center">
-        <p class="eyebrow eyebrow--center" data-reveal>Процесс</p>
-        <h2 class="h2" data-reveal>От идеи до совершенства</h2>
-      </div>
-
-      <div class="process__line" aria-hidden="true"><i id="processProgress"></i></div>
-
-      <ol class="steps">
-        <li class="step" data-reveal>
-          <div class="step__img"><img src="img/s1.jpg" alt="Эскиз орнамента" loading="lazy"></div>
-          <span class="step__num">01</span><h3 class="step__title">Замысел</h3>
-          <p class="step__text">Знакомимся с домом, архитектурой и вашими пожеланиями. Рождается идея.</p>
-        </li>
-        <li class="step" data-reveal>
-          <div class="step__img"><img src="img/s2.jpg" alt="Чертёж изделия" loading="lazy"></div>
-          <span class="step__num">02</span><h3 class="step__title">Проектирование</h3>
-          <p class="step__text">Эскизы, чертежи и визуализация. Каждая пропорция выверена.</p>
-        </li>
-        <li class="step" data-reveal>
-          <div class="step__img"><img src="img/s3.jpg" alt="Ковка раскалённого металла" loading="lazy"></div>
-          <span class="step__num">03</span><h3 class="step__title">Ковка</h3>
-          <p class="step__text">Горн, молот и наковальня. Металл получает форму вручную.</p>
-        </li>
-        <li class="step" data-reveal>
-          <div class="step__img"><img src="img/s4.jpg" alt="Обработка изделия, искры" loading="lazy"></div>
-          <span class="step__num">04</span><h3 class="step__title">Обработка</h3>
-          <p class="step__text">Сборка, зачистка, подгонка деталей и защита металла.</p>
-        </li>
-        <li class="step" data-reveal>
-          <div class="step__img"><img src="img/s5.jpg" alt="Патинированный кованый элемент" loading="lazy"></div>
-          <span class="step__num">05</span><h3 class="step__title">Патинирование</h3>
-          <p class="step__text">Благородный цвет и глубина фактуры, которые не стареют.</p>
-        </li>
-        <li class="step" data-reveal>
-          <div class="step__img"><img src="img/s6.jpg" alt="Монтаж кованой входной группы" loading="lazy"></div>
-          <span class="step__num">06</span><h3 class="step__title">Монтаж</h3>
-          <p class="step__text">Аккуратная установка на объекте нашими мастерами.</p>
-        </li>
-        <li class="step" data-reveal>
-          <div class="step__img"><img src="img/s7.jpg" alt="Кованые ворота спустя годы" loading="lazy"></div>
-          <span class="step__num">07</span><h3 class="step__title">Наследие</h3>
-          <p class="step__text">Изделие служит десятилетиями и переходит к следующим поколениям.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- ============ ЦИТАТА + ЦЕННОСТИ ============ -->
-  <section class="quote section">
-    <div class="container">
-      <blockquote class="quote__text" id="quoteText">Хорошее изделие остаётся красивым спустя годы. Великое — спустя поколения.</blockquote>
-      <div class="divider" data-reveal aria-hidden="true"><img src="img/logo-emblem-sm.png" alt="" width="31" height="40"></div>
-
-      <ul class="values">
-        <li class="value" data-reveal>
-          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 16h26c6 0 10-3 10-3v5c0 4-5 7-10 7h-3v4c0 3 3 5 5 6v3H14v-3c2-1 5-3 5-6v-4c-7 0-13-4-13-9z"/><path d="M14 40h20"/></svg>
-          <span>Индивидуальные проекты</span>
-        </li>
-        <li class="value" data-reveal>
-          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M16 26V11a2.5 2.5 0 015 0v11M21 22V8a2.5 2.5 0 015 0v14M26 22V10a2.5 2.5 0 015 0v13M31 23v-8a2.5 2.5 0 015 0v14c0 8-5 14-12 14h-2c-5 0-8-3-11-7l-5-8a2.5 2.5 0 014-3l4 4"/></svg>
-          <span>Ручная работа</span>
-        </li>
-        <li class="value" data-reveal>
-          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5l15 6v11c0 10-6 17-15 21C15 39 9 32 9 22V11z"/><path d="M24 14v20M24 22c-3-4-7-4-7-4s0 5 7 8M24 22c3-4 7-4 7-4s0 5-7 8"/></svg>
-          <span>Качество на десятилетия</span>
-        </li>
-        <li class="value" data-reveal>
-          <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 17L24 7l18 10zM8 17h32M11 21v15M19 21v15M29 21v15M37 21v15M7 36h34M5 41h38"/></svg>
-          <span>Наследие в деталях</span>
-        </li>
+      <ul class="hero__facts">
+        <li><b data-total-works>350+</b><span>фото выполненных работ</span></li>
+        <li><b data-total-cats>17</b><span>направлений ковки</span></li>
+        <li><b>ДНР</b><span>выезд на замер и монтаж</span></li>
       </ul>
     </div>
   </section>
 
-  <div class="iron-divider iron-divider--flip" aria-hidden="true"></div>
+  <!-- бегущая строка -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Ворота</span><i>✦</i><span>Калитки</span><i>✦</i><span>Заборы</span><i>✦</i><span>Перила</span><i>✦</i><span>Лестницы</span><i>✦</i><span>Балконы</span><i>✦</i><span>Навесы</span><i>✦</i><span>Беседки</span><i>✦</i><span>Решётки</span><i>✦</i><span>Мангалы</span><i>✦</i><span>Мебель</span><i>✦</i><span>Фонари</span><i>✦</i>
+      <span>Ворота</span><i>✦</i><span>Калитки</span><i>✦</i><span>Заборы</span><i>✦</i><span>Перила</span><i>✦</i><span>Лестницы</span><i>✦</i><span>Балконы</span><i>✦</i><span>Навесы</span><i>✦</i><span>Беседки</span><i>✦</i><span>Решётки</span><i>✦</i><span>Мангалы</span><i>✦</i><span>Мебель</span><i>✦</i><span>Фонари</span><i>✦</i>
+    </div>
+  </div>
 
-  <!-- ============ МАТЕРИАЛЫ ============ -->
-  <section class="materials section">
-    <div class="container materials__grid">
-      <div class="materials__body">
-        <p class="eyebrow" data-reveal>Материалы</p>
-        <h2 class="h2" data-reveal>Мастерство<br>в деталях</h2>
-        <p data-reveal>Каждый изгиб, каждая линия, каждая пропорция имеют значение. Мы используем только проверенные материалы и работаем с ними так, чтобы изделия служили десятилетиями.</p>
-        <div class="materials__thumbs">
-          <img src="img/works/mebel/24-t.jpg" alt="Кованый цветок ручной работы" loading="lazy" data-reveal data-open="mebel:24">
-          <img src="img/works/mebel/06-t.jpg" alt="Кованые розы" loading="lazy" data-reveal data-open="mebel:06">
-          <img src="img/works/ograzhdeniya/45-t.jpg" alt="Навершия пик ограждения" loading="lazy" data-reveal data-open="ograzhdeniya:45">
-          <img src="img/works/lestnitsy/36-t.jpg" alt="Кованый завиток балясины" loading="lazy" data-reveal data-open="lestnitsy:36">
-        </div>
+  <!-- ============ О КУЗНИЦЕ ============ -->
+  <section class="section about" id="about">
+    <div class="container about__grid">
+      <div>
+        <p class="eyebrow" data-reveal>О кузнице</p>
+        <h2 class="h2" data-reveal>Металл, который <em>делают руками</em>, а не штампуют</h2>
       </div>
-      <div class="materials__media" data-reveal="clip">
-        <img src="img/matleaf.jpg" alt="Кованый лист крупным планом" loading="lazy" data-parallax="0.1" width="825" height="500">
+      <div class="about__text">
+        <p data-reveal>«Истая Кузница» — мастерская художественной ковки в Донецке. Мы не продаём готовые секции из каталога: каждое изделие проектируем под конкретный дом, участок или интерьер — с учётом размеров, стиля фасада и ваших пожеланий.</p>
+        <p data-reveal>Заказы выполняем по Донецку и по всей Донецкой Народной Республике: приезжаем на замер, согласовываем эскиз, изготавливаем и монтируем.</p>
+        <ul class="ticks" data-reveal>
+          <li>Индивидуальный эскиз под каждый объект</li>
+          <li>Ручная ковка элементов в собственной кузнице</li>
+          <li>Грунт, покраска и патина — защита от коррозии</li>
+          <li>Доставка и монтаж своими силами</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- ============ 06. КОНТАКТЫ / ФОРМА ============ -->
-  <section class="contact section" id="contacts" data-section>
-    <div class="contact__seal" aria-hidden="true"><img src="img/seal.jpg" alt="" loading="lazy" data-parallax="0.08"></div>
+  <!-- ============ УСЛУГИ ============ -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" data-reveal>Услуги</p>
+          <h2 class="h2" data-reveal>Что мы куём</h2>
+        </div>
+        <p class="section-head__sub" data-reveal>Нажмите на направление — откроются фотографии реальных работ</p>
+      </div>
+      <div class="services__grid" id="servicesGrid"></div>
+      <div class="services__more" id="servicesMore"></div>
+    </div>
+  </section>
+
+  <!-- ============ ГАЛЕРЕЯ ============ -->
+  <section class="section works" id="works">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" data-reveal>Портфолио</p>
+          <h2 class="h2" data-reveal>Наши работы</h2>
+        </div>
+        <p class="section-head__sub" data-reveal>Только реальные объекты мастерской — без фото из интернета</p>
+      </div>
+      <div class="filters" id="filters" role="tablist" aria-label="Категории работ"></div>
+      <div class="works__grid" id="worksGrid" aria-live="polite"></div>
+      <div class="works__more">
+        <button type="button" class="btn btn--ghost" id="worksMore" hidden>Показать ещё</button>
+      </div>
+      <noscript><p class="muted">Чтобы посмотреть галерею, включите JavaScript в браузере.</p></noscript>
+    </div>
+  </section>
+
+  <!-- ============ ПРОЦЕСС ============ -->
+  <section class="section process" id="process">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <p class="eyebrow" data-reveal>Как мы работаем</p>
+        <h2 class="h2" data-reveal>От заявки до монтажа — 6 шагов</h2>
+      </div>
+      <ol class="steps">
+        <li class="step" data-reveal>
+          <span class="step__num">01</span>
+          <svg class="step__ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M14 6h14l8 8v28H14z"/><path d="M28 6v8h8M19 22h12M19 28h12M19 34h8"/></svg>
+          <h3>Заявка</h3>
+          <p>Звоните, пишите в мессенджер или оставляете заявку на сайте. Присылайте фото объекта и примеры, что нравится.</p>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__num">02</span>
+          <svg class="step__ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 30l24-24 12 12-24 24z"/><path d="M14 22l4 4M19 17l3 3M24 12l4 4M29 7l3 3"/></svg>
+          <h3>Замер</h3>
+          <p>Мастер приезжает на объект в Донецке или в другом городе ДНР, снимает размеры, обсуждает детали.</p>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__num">03</span>
+          <svg class="step__ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40c6-2 8-8 14-8s6 6 12 6 6-10 6-10"/><path d="M30 8l10 10-14 14-10-10z"/></svg>
+          <h3>Эскиз и смета</h3>
+          <p>Готовим эскиз, подбираем узор, металл и покрытие. Называем точную стоимость и срок.</p>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__num">04</span>
+          <svg class="step__ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 18h22c4 0 9-2 9-2v4c0 3-4 6-9 6h-2v4c0 3 3 4 5 5v3H14v-3c2-1 5-2 5-5v-4c-6 0-11-3-11-8z"/><path d="M30 8l4-4M36 12l5-2M24 6l-1-4"/></svg>
+          <h3>Ковка</h3>
+          <p>Изделие куётся в нашей кузнице: горн, молот, наковальня. Элементы собираются и зачищаются.</p>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__num">05</span>
+          <svg class="step__ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 8h22v10H10z"/><path d="M32 13h6v10H22v6"/><path d="M19 29h6v13h-6z"/></svg>
+          <h3>Покраска</h3>
+          <p>Антикоррозийный грунт, краска по металлу, патина золотом, медью или серебром — по вашему выбору.</p>
+        </li>
+        <li class="step" data-reveal>
+          <span class="step__num">06</span>
+          <svg class="step__ico" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 42h36M10 42V20l14-12 14 12v22"/><path d="M19 42V28h10v14"/></svg>
+          <h3>Монтаж</h3>
+          <p>Привозим и устанавливаем на объекте. Вы принимаете работу и получаете изделие на долгие годы.</p>
+        </li>
+      </ol>
+      <div class="process__cta" data-reveal>
+        <a href="#contacts" class="btn btn--fire">Начать с заявки <i class="arrow"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ГЕОГРАФИЯ ============ -->
+  <section class="section area" id="area">
+    <div class="container area__grid">
+      <div>
+        <p class="eyebrow" data-reveal>География</p>
+        <h2 class="h2" data-reveal>Мастерская в Донецке.<br><em>Работаем по всей ДНР</em></h2>
+        <p data-reveal>Выезжаем на замер, доставляем и монтируем изделия в Донецке и в других городах и посёлках Республики. Если вашего населённого пункта нет в списке — просто позвоните, договоримся.</p>
+        <ul class="cities" data-reveal>
+          <li class="is-main">Донецк</li><li>Макеевка</li><li>Горловка</li><li>Енакиево</li><li>Харцызск</li><li>Ясиноватая</li><li>Шахтёрск</li><li>Торез</li><li>Снежное</li><li>Иловайск</li><li>Амвросиевка</li><li>Докучаевск</li><li>Старобешево</li><li>Волноваха</li><li>Мариуполь</li><li>Новоазовск</li><li>Дебальцево</li><li>и другие</li>
+        </ul>
+      </div>
+      <div class="map" data-reveal>
+        <div class="map__frame" id="mapFrame">
+          <button type="button" class="map__placeholder" id="mapLoad">
+            <span class="map__pin" aria-hidden="true"></span>
+            <span>Показать на карте</span>
+          </button>
+        </div>
+        <div class="map__cap">
+          <span class="pin" aria-hidden="true"></span>
+          <span><b>г. Донецк</b> — мастерская. Визит в кузницу — по предварительной договорённости.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section faq" id="faq">
+    <div class="container faq__grid">
+      <div>
+        <p class="eyebrow" data-reveal>Вопросы</p>
+        <h2 class="h2" data-reveal>Частые вопросы</h2>
+        <p class="muted" data-reveal>Не нашли ответ? Позвоните или напишите — ответим по делу.</p>
+      </div>
+      <div class="faq__list">
+        <details class="qa" data-reveal>
+          <summary>Сколько стоят кованые ворота или забор?</summary>
+          <p>Цена зависит от размеров, сложности узора, количества кованых элементов, толщины металла и вида покрытия. Поэтому мы не пишем «цену за метр» наугад: пришлите размеры и фото понравившегося варианта — дадим ориентир по стоимости, а точную смету — после замера и эскиза.</p>
+        </details>
+        <details class="qa" data-reveal>
+          <summary>Можно ли сделать по моему фото или эскизу?</summary>
+          <p>Да. Можно прислать фото из интернета, свой рисунок или выбрать работу из нашего портфолио — адаптируем узор под ваши размеры и стиль дома.</p>
+        </details>
+        <details class="qa" data-reveal>
+          <summary>Сколько времени занимает изготовление?</summary>
+          <p>Срок зависит от объёма и сложности изделия и от текущей загрузки мастерской. Точный срок фиксируем при согласовании эскиза и сметы.</p>
+        </details>
+        <details class="qa" data-reveal>
+          <summary>Вы работаете только в Донецке?</summary>
+          <p>Нет. Мастерская находится в Донецке, а замер, доставку и монтаж выполняем по всей ДНР: Макеевка, Горловка, Енакиево, Харцызск, Мариуполь и другие населённые пункты.</p>
+        </details>
+        <details class="qa" data-reveal>
+          <summary>Как защищаете металл от ржавчины?</summary>
+          <p>Перед покраской изделие зачищается и грунтуется антикоррозийным составом, затем окрашивается краской по металлу. По желанию наносим патину — она подчёркивает рельеф ковки.</p>
+        </details>
+        <details class="qa" data-reveal>
+          <summary>Можно ли приехать в кузницу и посмотреть образцы?</summary>
+          <p>Да, по предварительной договорённости. Позвоните заранее — согласуем время и подскажем, как добраться.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ КОНТАКТЫ ============ -->
+  <section class="section contact" id="contacts">
     <div class="container contact__grid">
       <div class="contact__info">
         <p class="eyebrow" data-reveal>Контакты</p>
-        <h2 class="h2" data-reveal>Создадим что-то<br>уникальное вместе</h2>
-        <p data-reveal>Расскажите о вашем проекте — мы свяжемся с вами, обсудим идею и предложим лучшее решение.</p>
+        <h2 class="h2" data-reveal>Расскажите, что нужно — <em>посчитаем</em></h2>
+        <p data-reveal>Оставьте заявку или свяжитесь удобным способом. Можно сразу прислать фото объекта и размеры — так расчёт будет точнее.</p>
 
         <ul class="contact__list" data-reveal>
-          <li><span>Телефон</span><a href="tel:+79991234567">+7 (999) 123-45-67</a></li>
-          <li><span>Почта</span><a href="mailto:info@istaya-kuznica.ru">info@istaya-kuznica.ru</a></li>
-          <li><span>Мастерская</span>Москва, ул. Кузнечный Вал, 21</li>
-          <li><span>Часы работы</span>Пн–Сб, 9:00–19:00</li>
+          <li><span>Телефон</span><a data-c="phone" href="tel:+79490000000">+7 (949) 000-00-00</a></li>
+          <li data-c-row="email"><span>Почта</span><a data-c="email" href="mailto:info@example.com">info@example.com</a></li>
+          <li><span>Мастерская</span><span data-c="city">г. Донецк, ДНР</span></li>
+          <li><span>Часы работы</span><span data-c="hours">Пн–Сб, 9:00–18:00</span></li>
         </ul>
+        <div class="messengers messengers--big" data-messengers data-reveal></div>
       </div>
 
       <form class="form" id="leadForm" action="send.php" method="post" novalidate data-reveal>
+        <h3 class="form__title">Заявка на расчёт</h3>
         <div class="form__row">
           <label class="field">
             <input type="text" name="name" required maxlength="80" autocomplete="name" placeholder=" ">
             <span>Ваше имя *</span>
           </label>
           <label class="field">
-            <input type="tel" name="phone" required maxlength="20" autocomplete="tel" inputmode="tel" placeholder=" ">
+            <input type="tel" name="phone" required maxlength="24" autocomplete="tel" inputmode="tel" placeholder=" ">
             <span>Телефон *</span>
           </label>
         </div>
+        <div class="form__row">
+          <label class="field field--select">
+            <select name="type" id="formType">
+              <option value="">Что нужно сделать?</option>
+            </select>
+          </label>
+          <label class="field">
+            <input type="text" name="city" maxlength="80" placeholder=" " autocomplete="address-level2">
+            <span>Город / посёлок</span>
+          </label>
+        </div>
         <label class="field">
-          <input type="email" name="email" maxlength="120" autocomplete="email" placeholder=" ">
-          <span>E-mail</span>
-        </label>
-        <label class="field field--select">
-          <select name="type">
-            <option value="">Что планируете?</option>
-            <option>Ворота и калитка</option>
-            <option>Ограждение</option>
-            <option>Лестница и перила</option>
-            <option>Балкон или навес</option>
-            <option>Интерьерная ковка</option>
-            <option>Комплексный проект</option>
-            <option>Другое</option>
-          </select>
-        </label>
-        <label class="field">
-          <textarea name="message" rows="3" maxlength="2000" placeholder=" "></textarea>
-          <span>Расскажите о проекте</span>
+          <textarea name="message" rows="4" maxlength="2000" placeholder=" "></textarea>
+          <span>Размеры, пожелания, удобное время для звонка</span>
         </label>
 
         <!-- защита от ботов: поле должно оставаться пустым -->
@@ -438,41 +330,15 @@
 
         <label class="check">
           <input type="checkbox" name="agree" value="1" required>
-          <span class="check__box"></span>
-          <span class="check__text">Я даю согласие на обработку персональных данных в соответствии с <a href="politika.html" target="_blank" rel="noopener">Политикой конфиденциальности</a></span>
+          <span class="check__box" aria-hidden="true"></span>
+          <span>Согласен(на) на обработку персональных данных согласно <a href="politika.html" target="_blank" rel="noopener">политике конфиденциальности</a></span>
         </label>
 
-        <!-- Яндекс SmartCaptcha (невидимая). Ключ клиента — в js/config.js, серверный — в send.php -->
-        <div class="form__captcha" id="captchaBox"></div>
-        <input type="hidden" name="smart-token" id="captchaToken" value="">
-
-        <button type="submit" class="btn btn--fill form__submit">
+        <button type="submit" class="btn btn--fire form__submit">
           <span class="form__submit-text">Отправить заявку</span> <i class="arrow"></i>
         </button>
         <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
       </form>
-    </div>
-
-    <!-- Карта: подгружается, когда блок появляется на экране. Координаты — в js/config.js -->
-    <div class="container">
-      <div class="map" id="map" data-reveal>
-        <div class="map__frame" id="mapFrame">
-          <button type="button" class="map__placeholder" id="mapLoad">
-            <span class="map__pin" aria-hidden="true"></span>
-            <span>Показать мастерскую на карте</span>
-          </button>
-        </div>
-        <div class="map__panel">
-          <p class="eyebrow">Как добраться</p>
-          <p class="map__address" id="mapAddress">Москва, ул. Кузнечный Вал, 21</p>
-          <p class="map__note">Приезжайте в мастерскую — покажем образцы, металл и патины вживую. Пожалуйста, предупредите о визите заранее.</p>
-          <div class="map__routes">
-            <a class="map__route" id="routeYandex" target="_blank" rel="noopener">Яндекс Карты</a>
-            <a class="map__route" id="route2gis" target="_blank" rel="noopener">2ГИС</a>
-            <a class="map__route" id="routeGoogle" target="_blank" rel="noopener">Google Maps</a>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -481,60 +347,58 @@
 <!-- ============ ПОДВАЛ ============ -->
 <footer class="footer">
   <div class="container footer__top">
-    <a href="#top" class="logo logo--footer" aria-label="Истая Кузница — наверх">
-      <img src="img/logo-emblem-sm.png" alt="" width="93" height="120" class="logo__mark">
+    <a href="#top" class="logo" aria-label="Истая Кузница — наверх">
+      <img src="img/logo-emblem-sm.png" alt="" width="93" height="120" class="logo__mark" loading="lazy">
       <span class="logo__text">Истая<br>Кузница</span>
     </a>
-    <nav class="footer__nav" aria-label="Навигация в подвале">
-      <a href="#about">О нас</a><a href="#projects">Направления</a><a href="#works">Работы</a><a href="#process">Процесс</a><a href="#philosophy">Философия</a><a href="#contacts">Контакты</a>
-    </nav>
+    <p class="footer__about">Художественная ковка под заказ.<br>Мастерская в г. Донецке, работаем по всей ДНР.</p>
     <div class="footer__contacts">
-      <a href="tel:+79991234567">+7 (999) 123-45-67</a>
-      <a href="mailto:info@istaya-kuznica.ru">info@istaya-kuznica.ru</a>
+      <a data-c="phone" href="tel:+79490000000">+7 (949) 000-00-00</a>
+      <a data-c="email" href="mailto:info@example.com">info@example.com</a>
+      <div class="messengers" data-messengers></div>
     </div>
   </div>
   <div class="container footer__bottom">
-    <p>© <span id="year">2026</span> Истая Кузница. Все права защищены.</p>
-    <p class="footer__legal">Информация на сайте носит исключительно ознакомительный характер и ни при каких условиях не является публичной офертой (ст. 437 ГК РФ). Стоимость и сроки определяются индивидуально.</p>
+    <p>© <span id="year">2026</span> Истая Кузница</p>
+    <p class="footer__legal">Информация на сайте не является публичной офертой. Стоимость и сроки определяются индивидуально.</p>
     <a href="politika.html">Политика конфиденциальности</a>
   </div>
 </footer>
 
-<!-- ============ ЛАЙТБОКС ГАЛЕРЕИ ============ -->
-<div class="modal lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lbTitle" hidden>
-  <div class="modal__backdrop" data-close></div>
-  <div class="lightbox__stage">
-    <button class="modal__close" data-close aria-label="Закрыть">×</button>
-    <button type="button" class="lightbox__btn lightbox__btn--prev" id="lbPrev" aria-label="Предыдущее фото"><i class="arrow arrow--left"></i></button>
-    <figure class="lightbox__figure">
-      <div class="lightbox__img"><img id="lbImg" alt=""><span class="lightbox__spin" aria-hidden="true"></span></div>
-      <figcaption class="lightbox__cap">
-        <div><p class="eyebrow" id="lbTitle"></p><p class="lightbox__text" id="lbText"></p></div>
-        <span class="lightbox__count" id="lbCount"></span>
-        <a href="#contacts" class="btn btn--outline btn--sm" data-close>Хочу похожее <i class="arrow"></i></a>
-      </figcaption>
-    </figure>
-    <button type="button" class="lightbox__btn lightbox__btn--next" id="lbNext" aria-label="Следующее фото"><i class="arrow"></i></button>
+<!-- плавающая кнопка звонка (мобильные) -->
+<a class="fab" data-c="phone" href="tel:+79490000000" aria-label="Позвонить">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg>
+</a>
+
+<!-- ============ ЛАЙТБОКС ============ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lbTitle" hidden>
+  <div class="lightbox__backdrop" data-close></div>
+  <button class="lightbox__close" type="button" data-close aria-label="Закрыть">×</button>
+  <button class="lightbox__nav lightbox__nav--prev" type="button" id="lbPrev" aria-label="Предыдущее фото"><i class="arrow arrow--left"></i></button>
+  <figure class="lightbox__figure">
+    <div class="lightbox__img"><img id="lbImg" alt=""><span class="spinner" aria-hidden="true"></span></div>
+    <figcaption class="lightbox__cap">
+      <div><p class="lightbox__title" id="lbTitle"></p><p class="lightbox__count" id="lbCount"></p></div>
+      <a href="#contacts" class="btn btn--fire btn--sm" id="lbWant">Хочу похожее</a>
+    </figcaption>
+  </figure>
+  <button class="lightbox__nav lightbox__nav--next" type="button" id="lbNext" aria-label="Следующее фото"><i class="arrow"></i></button>
+</div>
+
+<!-- ============ ОКНО «ОТПРАВИТЬ ЧЕРЕЗ МЕССЕНДЖЕР» (если на хостинге нет PHP) ============ -->
+<div class="dialog" id="sendVia" role="dialog" aria-modal="true" aria-labelledby="sendViaTitle" hidden>
+  <div class="dialog__backdrop" data-close></div>
+  <div class="dialog__box">
+    <button class="dialog__close" type="button" data-close aria-label="Закрыть">×</button>
+    <h3 id="sendViaTitle">Почти готово!</h3>
+    <p>Текст заявки скопирован. Выберите, куда его отправить — сообщение уже будет заполнено:</p>
+    <div class="send-via__btns" id="sendViaBtns"></div>
+    <pre class="send-via__text" id="sendViaText"></pre>
   </div>
 </div>
 
-<!-- ============ МОДАЛКА ВИДЕО ============ -->
-<div class="modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Видео о мастерской" hidden>
-  <div class="modal__backdrop" data-close></div>
-  <div class="modal__dialog modal__dialog--video">
-    <button class="modal__close" data-close aria-label="Закрыть">×</button>
-    <!-- Положите ролик в video/forge.mp4 (и при желании video/forge.webm) -->
-    <video id="videoEl" controls playsinline preload="none" poster="img/hero.jpg">
-      <source src="video/forge.webm" type="video/webm">
-      <source src="video/forge.mp4" type="video/mp4">
-    </video>
-    <p class="video-fallback" id="videoFallback" hidden>Видео скоро появится. А пока — загляните в наши проекты.</p>
-  </div>
-</div>
-
-<script src="js/config.js" defer></script>
-<script src="js/works.js" defer></script>
-<script src="js/iron.js" defer></script>
-<script src="js/main.js" defer></script>
+<script src="js/config.js?v=2"></script>
+<script src="js/works.js?v=2"></script>
+<script src="js/main.js?v=2" defer></script>
 </body>
 </html>

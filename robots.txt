@@ -1,5 +1,7 @@
 User-agent: *
 Disallow: /data/
 Disallow: /send.php
+Disallow: /send-config.php
+Allow: /
 
-Sitemap: https://istaya-kuznica.ru/sitemap.xml
+Sitemap: https://example.com/sitemap.xml
