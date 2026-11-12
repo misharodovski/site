@@ -16,7 +16,7 @@ ErrorDocument 404 /404.html
 </IfModule>
 
 # Закрываем служебные файлы
-<FilesMatch "^(send-config\.php|README\.md|.*\.csv|.*\.log)$">
+<FilesMatch "^(send-config\.php|README\.md|added-photos\.txt|.*\.csv|.*\.log|.*\.ps1|.*\.cmd|.*\.py)$">
   Require all denied
 </FilesMatch>
 
